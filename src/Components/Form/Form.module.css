@@ -1,0 +1,26 @@
+.formStyle{
+    margin: 10px;
+    width: 300px;
+    height: 250px;
+    border: 1px solid #070707;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.formStyleTitle{
+    margin: 0;
+    padding:0;
+}
+.formStyleFormInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.formStyleFormButton{
+    width: 180px;
+    margin-left: 60px;
+}
+.formStyleFormButton:hover{
+background: blue;
+}

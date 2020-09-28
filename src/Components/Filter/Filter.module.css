@@ -1,0 +1,14 @@
+.filter{
+  margin: 10px;
+    width: 300px;
+    height: 150px;
+    border: 1px solid #070707;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+.filterInput{
+    margin-left: 60px;
+    width: 180px;
+}

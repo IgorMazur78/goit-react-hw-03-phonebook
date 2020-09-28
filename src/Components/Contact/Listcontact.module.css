@@ -1,0 +1,6 @@
+.buttonDeleteContact{
+    margin: 10px
+}
+.buttonDeleteContact:hover {
+    background: blue;
+}
