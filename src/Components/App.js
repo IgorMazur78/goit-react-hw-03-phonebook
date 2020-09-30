@@ -48,26 +48,50 @@ export default class App extends Component {
       number,
     };
 
+    const prevContactName = contacts.some((e) => e.name === newContact.name);
+    const prevContactNumber = contacts.some(
+      (e) => e.number === newContact.number
+    );
+
+    if (prevContactName || prevContactNumber) {
+      alert("such contact already exists");
+      return;
+    }
+    if (!newContact.name || !newContact.number) {
+      alert("enter data");
+      return;
+    }
+
+  
     this.setState((prevState) => {
-      if (newContact.name && newContact.number) {
+      if (newContact.name && newContact.number && prevContactNumber === false) {
         return {
           contacts: [...prevState.contacts, newContact],
         };
-      } else if (
-        contacts.some((e) => e.name === newContact.name) ||
-        contacts.some((e) => e.number === newContact.number)
-      ) {
-        alert("such contact already exists");
-        return {
-          contacts: [...prevState.contacts],
-        };
-      } else {
-        alert("maintains data");
-        return {
-          contacts: [...prevState.contacts],
-        };
-      }
+      } 
+      
     });
+
+    // this.setState((prevState) => {
+    //   if (newContact.name && newContact.number) {
+    //     return {
+    //       contacts: [...prevState.contacts, newContact],
+    //     };
+    //   } else if (
+    //     contacts.some((e) => e.name === newContact.name) ||
+    //     contacts.some((e) => e.number === newContact.number)
+    //   ) {
+    //     alert("such contact already exists");
+    //     return {
+    //       contacts: [...prevState.contacts],
+    //     };
+    //   } else {
+    //     alert("maintains data");
+    //     return {
+    //       contacts: [...prevState.contacts],
+    //     };
+    //   }
+    // });
   };
   deleteContact = (contactsId) => {
     console.log(contactsId);
